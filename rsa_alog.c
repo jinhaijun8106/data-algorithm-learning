@@ -36,6 +36,18 @@ struct EX_GCD extended_euclidean(int a, int b) {
 	return ex_gcd;
 	}
 
+int gcd(int m,int n)
+{
+        int t = 1;
+        while(t != 0)
+        {
+                t=m%n;
+                m=n;
+                n=t;
+        }
+        return m;
+}
+
 int main(void) {
 	int a, b;
 	printf("Please input two integers divided by a space.\n");
@@ -50,5 +62,8 @@ int main(void) {
 	printf("Press any key to exit.\n");
 	getchar();
 	getchar();
+
+	int gcd_value = gcd(a,b);
+        printf("gcd of %d and %d is %d\n", a, b, gcd_value);
 	return 0;
 }
